@@ -1,0 +1,42 @@
+<html>
+<head>
+<style>
+html, body{
+	padding:0px;
+	margin:0px;
+}
+</style>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function(){	
+		$("#btnSalvaComentario").click(function(){
+			var comentariosAnteriores = $("#divComentario").html();
+			var comentario = $("#txtComent").val();
+			var nome =$("#txtNome").val();
+			var saida = comentariosAnteriores+"<br>"+nome+" - "+comentario;
+			$("#divComentario").html(saida);
+			$("#txtNome").val("");
+			$("#txtComent").val("");
+		});
+	});
+</script>
+</head>
+<body >
+<table width="100%" height="100%" border=0 bgcolor=ccffcc>
+	<tr>
+		<td align=center>
+			<embed width="70%" height="70%" src="https://www.youtube.com/embed/tI9GPtw_PYI" allowfullscreen>	
+			<br></br>
+			<div id="divComentario" style="margin-bottom:20px; color: blue;">
+			<font color="#000000"> Deixe aqui o seu comentário sobre este vídeo:</font><br></div>
+			Nome:<br> <input type="text" name="txtNome" id="txtNome" value="" style="width:250;"/>
+			<br>Comentário<br>
+			<input type="text" name="txtComent" id="txtComent" value="" style="width:250; height:70px" />
+			<br><input type="button" name="btnSalvaComentario" id="btnSalvaComentario" value="Comentar" />
+		</td>			
+		</td>
+	</tr>
+
+</table>
+</body>
+</html>

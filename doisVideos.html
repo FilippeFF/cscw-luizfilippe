@@ -1,0 +1,50 @@
+<html>
+<head>
+<style>
+html, body{
+	padding:0px;
+	margin:0px;
+}
+</style>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function(){	
+		$("#btnSalvaComentario").click(function(){
+			var comentariosAnteriores = $("#divComentario").html();
+			var comentario = $("#txtComent").val();
+			var nome =$("#txtNome").val();
+			var saida = comentariosAnteriores+"<br>"+nome+" - "+comentario;
+			$("#divComentario").html(saida);
+			$("#txtNome").val("");
+			$("#txtComent").val("");
+		});
+	});
+</script>
+</head>
+<body >
+<table width="100%" height="100%" border=0 bgcolor=ccffcc>
+	<tr>
+		<td colspan=2 align=center height=30%><img src="REFLITA.png" align=center> </td>
+	</tr>
+	<tr>
+		<td valign=top align=center>
+			<embed width="80%" height="100%" src="https://www.youtube.com/embed/5Gw-d8g27Ug" allowfullscreen>
+		</td>
+		<td valign=top align=center>
+			<embed width="80%" height="100%" src="https://www.youtube.com/embed/t4xYiJQ4ef4" allowfullscreen>				
+		</td>
+	</tr>
+		<tr bgcolor=ccffcc>
+			<td align=center colspan=2>
+			
+			<div id="divComentario" style="margin-bottom:20px; color: blue;">
+			<font color="#000000"> Deixe aqui o seu comentário sobre estes vídeos:</font><br></div>
+			Nome:<br> <input type="text" name="txtNome" id="txtNome" value="" style="width:250;"/>
+			<br>Comentário<br>
+			<input type="text" name="txtComent" id="txtComent" value="" style="width:250; height:70px" />
+			<br><input type="button" name="btnSalvaComentario" id="btnSalvaComentario" value="Comentar" />
+			</td>
+		</tr>
+</table>
+</body>
+</html>
